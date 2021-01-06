@@ -13,7 +13,7 @@ h2{
     text-align: center;
 }
 .topnav {
-   background-color: aliceblue;
+   background-color: #E9967A;
    overflow: hidden;
 }
 
@@ -33,4 +33,16 @@ h2{
 .topnav a.active{
     background-color: burlywood;
     color: white;
+}
+
+.home {
+    background-color: lightsalmon;
+    overflow: auto;
+}
+.home p{
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 16px;
 }
