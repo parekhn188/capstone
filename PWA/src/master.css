@@ -1,3 +1,36 @@
-body {
+h1 {
+    background-color: #FF7F50;
+    color: #000000;
+    font-size: 50px;
+    margin: auto;
+    text-align: center;
+}
+h2{
     background: #FF7F50;
+    color: #000000;
+    font-size: 20px;
+    margin: auto;
+    text-align: center;
+}
+.topnav {
+   background-color: aliceblue;
+   overflow: hidden;
+}
+
+.topnav a{
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    font-size: 16px;
+}
+
+.topnav a:hover {
+    background-color: cornflowerblue;
+    color: black;
+}
+
+.topnav a.active{
+    background-color: burlywood;
+    color: white;
 }
