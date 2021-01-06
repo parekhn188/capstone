@@ -1,0 +1,8 @@
+{
+    "name": "guitar app",
+    "short_name":"guitar",
+    "start_url": "index",
+    "background_color":"#6dcdb1",
+    "theme_color": "#009578",
+    "display" : "standalone"
+}
