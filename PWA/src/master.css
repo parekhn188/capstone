@@ -9,6 +9,8 @@ h2{
     background: #FF7F50;
     color: #000000;
     font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     margin: auto;
     text-align: center;
 }
@@ -43,6 +45,89 @@ h2{
     float: left;
     color: black;
     text-align: center;
+    padding: 10px 16px;
+    font-size: 16px;
+}
+
+.about {
+    background-color: white;
+    overflow: auto;
+}
+
+.about p{
+    font-family: Arial, Helvetica, sans-serif;
+    float: left;
+    color: black;
+    text-align: left;
+    padding: 10px 16px;
+    font-size: 16px;
+}
+
+.Swishguitar {
+    background-color: white;
+    overflow: auto;
+}
+.Swishguitar h1{
+    background-color: white;
+    font-family: "Times New Roman", Times, serif;
+    float: left;
+    color: #cc7000;
+    text-align: left;
+    padding: 14px 16px;
+    font-size: 35px;
+    margin: auto;
+
+}
+
+.Swishguitar p{
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    float: left;
+    color: black;
+    text-align: left;
+    padding: 10px 16px;
+    font-size: 16px;
+ 
+}
+
+.Members {
+    background-color: white;
+    overflow: auto;
+}
+.Members h1{
+    background-color: white;
+    font-family: "Times New Roman", Times, serif;
+    float: left;
+    color: #cc7000;
+    text-align: left;
+    padding: 14px 16px;
+    font-size: 35px;
+    margin: auto;
+}
+
+.Members h2{
+    background-color: lightsalmon;
+    font-family: "Times New Roman", Times, serif;
+    float:inline-start;
+    color: black;
+    text-align: left;
+    padding: 10px 25%;
+    font-size: 26px;
+    margin: auto;
+}
+
+.Members img{
+  background-color:lightsalmon;
+  padding: 10px 16px;
+  width: 25%;
+  height: 25%;
+}
+
+.Members p{
+    font-family: Arial, Helvetica, sans-serif;
+    float: left;
+    color: black;
+    text-align: left;
     padding: 10px 16px;
     font-size: 16px;
 }
