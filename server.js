@@ -11,9 +11,12 @@ app.listen(port, () => {
 
 app.use(express.static("PWA")); 
 
-app.get
+app.get("/", (req, resp) => {
+    resp.send("Here's some data "); 
+    console.log(req);
+});
 
-app.post("/", (req, res) => {
-    res.send("Code 200: POST Request Successful"); 
+app.post("/", (req, resp) => {
+    resp.send("Code 200: POST Request Successful"); 
     console.log(req); 
 });
