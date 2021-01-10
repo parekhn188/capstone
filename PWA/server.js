@@ -1,11 +1,20 @@
 //Required modules for setting up the server and handling requests
 const express = require("express"); 
 const request = require("request"); 
+const bodyParser = require("body-parser"); 
+const got = require("got"); 
 
 //Initialize
 const app = express(); 
 const port = 3000;
 
+
+//app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
+
+let dataVal = ""; 
+let testData = JSON.stringify({Data: 123,}); 
+let d2 = toString(123); 
 
 app.listen(port, () => {
     console.log("Listening on port 3000"); 
@@ -20,13 +29,30 @@ app.get("/get", (req, resp) => {
 });
 
 //Post routing 
-app.post("/", (req, resp) => {
-    resp.send("Code 200: POST Request Successful"); 
-    console.log(req); 
+app.post("/sendData", (req, resp) => {
+    console.log(req.body); 
+    resp.send("Code 200: POST Request Successful");  
 });
 
+(async () => {
+    try {
+        const {body} = await got.post('http://localhost:3000/sendData', {
+            json: {
+                hello : 'world'
+            },
+            responseType: 'json'
+        }); 
+        console.log(body.data); 
+    } catch (error) {
+        console.log(error.response.body); 
+    } 
+})();
+
+
+/*
 //Testing post request
-request.post({headers: {'content-type' : 'application/x-www-form-urlencoded'}, url:"http://localhost:3000", body:"testing"}, (err, resp, body) => {    
+request.post({headers: {'content-type' : 'application/x-www-form-urlencoded'}, url:"http://localhost:3000/sendData", body: '{val: 123}'}, (err, resp, body) => {    
     console.log(body); 
-    console.log(resp); 
+    //console.log(resp); 
 });
+*/
