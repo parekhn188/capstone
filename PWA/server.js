@@ -34,6 +34,7 @@ app.post("/sendData", (req, resp) => {
     resp.send("Code 200: POST Request Successful");  
 });
 
+
 (async () => {
     try {
         const {body} = await got.post('http://localhost:3000/sendData', {
@@ -47,12 +48,3 @@ app.post("/sendData", (req, resp) => {
         console.log(error.response.body); 
     } 
 })();
-
-
-/*
-//Testing post request
-request.post({headers: {'content-type' : 'application/x-www-form-urlencoded'}, url:"http://localhost:3000/sendData", body: '{val: 123}'}, (err, resp, body) => {    
-    console.log(body); 
-    //console.log(resp); 
-});
-*/
