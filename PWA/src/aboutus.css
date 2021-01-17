@@ -1,7 +1,7 @@
 /* -----------------------------NAV BAR (UNVIERSAL) -----------------*/
 .topnav {
 
-   width: 80%;
+   width: 90%;
   
 }
 
@@ -10,7 +10,7 @@ body{
     font-weight: 400;
 }
 header{
-    background: #55d6aa;
+   
 }
 
 
@@ -19,6 +19,7 @@ header{
     width: 15%;
     height: auto;
     padding: 20px;
+
     
 }
 nav{
@@ -72,7 +73,6 @@ nav a::before{
 nav a:hover::before{
     width: 100%;
 }
-
 /* -----------------------------ABOUT US PAGE  -----------------*/
 body{
 	margin-top: 0px;
@@ -129,6 +129,9 @@ body{
 
 .ps a:hover > img{
 	filter: none;
+}
+.ps a:target {
+    filter:grayscale(50%); 
 }
 
 
