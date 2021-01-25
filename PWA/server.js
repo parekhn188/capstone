@@ -12,13 +12,11 @@ const port = 3000;
 //app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-let dataVal = ""; 
-let testData = JSON.stringify({Data: 123,}); 
-let d2 = toString(123); 
 
 app.listen(port, () => {
     console.log("Listening on port 3000"); 
 }); 
+
 
 app.use(express.static("PWA")); 
 
@@ -34,7 +32,7 @@ app.post("/sendData", (req, resp) => {
     resp.send("Code 200: POST Request Successful");  
 });
 
-
+/*
 (async () => {
     try {
         const {body} = await got.post('http://localhost:3000/sendData', {
@@ -48,3 +46,4 @@ app.post("/sendData", (req, resp) => {
         console.log(error.response.body); 
     } 
 })();
+*/
