@@ -7,6 +7,18 @@
         <link rel="stylesheet" href="src/chords.css">
         <link rel="manifest" href="manifest.webmanifest">
         <script async type="text/javascript" src="https://www.scales-chords.com/api/scales-chords-api.js"></script>
+        <script>
+            $(document).on('change', function () {
+                $('.ChordSelect').hide();
+                $('#Eminor').show();
+                $('#chordDowndown').change(function () {
+                    $('.ChordSelect').hide();
+                    $('#'+$(this).val()).show();
+                })
+            });
+            alert("Anything");
+        </script>
+
     </head>
     <header>
              <script src="src/index.js"></script>
@@ -41,17 +53,35 @@
             <span class="border"></span>
             
             <div class = "dropdown" id = "dropdown">
-                <label for="dropdown">Choose a chord:</label>
-                <select name="dropdown" id="dropdown">
-                    <option value="E minor">E Minor</option>
-                    <option value="E">E</option>
-                    <option value="D">D</option>
-                    <option value="F">F</option>
+                <label for="chordDropdown">Choose a chord:</label>
+                <select name="chordDropdown" id="chordDropdown" data-target=".chordOptions">
+                    <option value="Eminor" data-show="#Eminor">E Minor</option>
+                    <option value="E" data-show="#E">E</option>
+                    <option value="D" data-show="#D">D</option>
+                    <option value="F" data-show="#F">F</option>
                 </select> 
             </div>
             
-            
         </div>  
+        <div class="chordOptions">
+            <div id="Eminor" class="ChordSelect">
+                <ins class="scales_chords_api" chord="D#m(maj9)"></ins>
+                <ins class="scales_chords_api" chord="D#m(maj9)" instrument="Guitar" output="sound"></ins>
+            </div>
+            <div id="E" class="ChordSelect">
+                <ins class="scales_chords_api" chord="E"></ins>
+                <ins class="scales_chords_api" chord="E" instrument="Guitar" output="sound"></ins>
+            </div>
+            <div id="D" class="ChordSelect">
+                <ins class="scales_chords_api" chord="D"></ins>
+                <ins class="scales_chords_api" chord="D" instrument="Guitar" output="sound"></ins>
+            </div>
+            <div id="F" class="ChordSelect">
+                <ins class="scales_chords_api" chord="F"></ins>
+                <ins class="scales_chords_api" chord="F" instrument="Guitar" output="sound"></ins>
+            </div>
+        </div>
+
 
         
 
