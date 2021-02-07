@@ -59,38 +59,69 @@ void loop() {
 
 */
 
-
+#define STDRESTPOS 450 
 #include <ESP8266WiFi.h>
 #include <ESP8266HTTPClient.h>
 #include <ArduinoJson.h>
 
+int userRestPos = 0; 
+String strumStatus = "";  
+
 void setup() {
   // put your setup code here, to run once:
   pinMode(LED_BUILTIN, OUTPUT); 
-  
+
   Serial.begin(115200); 
   Serial.println();
 
   WiFi.mode(WIFI_STA); 
 
-  WiFi.begin("ssd", "pass");
+  WiFi.begin("Krishna", "4162893529");
   Serial.print("connecting");
 
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
     Serial.print(".");
-  }
+  } 
 
+  //With external trigger
+  if (digitalRead(D3) == LOW) {
+    userRestPos = analogRead(A0); 
+  }
+  
+  Serial.println(userRestPos); 
+
+  /*
   Serial.println();
   Serial.print("connected, IP Address: ");
   Serial.println(WiFi.localIP());
+  */
 }
 
 void loop() {
+
+  int rawYData = analogRead(A0); 
+  int trigger = digitalRead(D3); 
+
+  //Serial.println(rawYData); 
+  //Serial.println(trigger); 
+
+  // With external trigger
+    if(!trigger && rawYData != userRestPos) {
+      strumStatus = "Is Strumming"; 
+    } else {
+      strumStatus = "Idle"; 
+    }
+  
+
+  Serial.println(strumStatus); 
+ 
+  delay(500); 
+
+  /*
   if(WiFi.status() == WL_CONNECTED) {
 
     HTTPClient http; 
-    
     //Get request send 
     http.begin("http://192.168.2.18:3000/sendData"); 
     http.addHeader("Content-Type", "application/json"); 
@@ -105,22 +136,8 @@ void loop() {
       Serial.println(payload); 
     }
     
-
-    /* 
-    //Post Request Send
-    http.begin("http://192.168.2.18:3000/get"); s
-    int httpCode = http.GET();
-    String payload = http.getString(); 
-
-    if (httpCode < 1) {
-      Serial.printf("[HTTP] GET... failed, error: %s\n", http.errorToString(httpCode).c_str());
-    } else {
-      Serial.println(httpCode); 
-      Serial.println(payload); 
-    }
-    */
-
     http.end(); 
 
   }
+  */
 }
