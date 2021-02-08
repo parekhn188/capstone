@@ -19,7 +19,7 @@ app.get("/get", (req, resp) => {
 
 //Post routing 
 app.post("/sendData", (req, resp) => {
-    console.log(req.body); 
+    console.log(req); 
     resp.send("Code 200: POST Request Successful");  
 });
 
