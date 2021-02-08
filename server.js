@@ -1,17 +1,9 @@
 //Required modules for setting up the server and handling requests
 const express = require("express"); 
-const request = require("request"); 
-const bodyParser = require("body-parser"); 
-const got = require("got"); 
 
 //Initialize
 const app = express(); 
 const port = 5000;
-
-
-//app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.json());
-
 
 app.listen(port, () => {
     console.log("Listening on port 5000"); 
