@@ -6,7 +6,7 @@ const got = require("got");
 
 //Initialize
 const app = express(); 
-const port = 3000;
+const port = 5000;
 
 
 //app.use(bodyParser.urlencoded({extended: true}));
@@ -14,9 +14,8 @@ app.use(bodyParser.json());
 
 
 app.listen(port, () => {
-    console.log("Listening on port 3000"); 
+    console.log("Listening on port 5000"); 
 }); 
-
 
 app.use(express.static("PWA")); 
 
