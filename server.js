@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 //Initialize
 const app = express(); 
 const port = 3000;
+var strumStatus; 
 
 app.use(bodyParser.json()); 
 
@@ -23,21 +24,8 @@ app.get("/get", (req, resp) => {
 //Post routing 
 app.post("/sendData", (req, resp) => {
     console.log(req.body); 
+    strumStatus = req.body.strumStatus; 
+    console.log(strumStatus); 
     resp.send("Code 200: POST Request Successful");  
 });
 
-/*
-(async () => {
-    try {
-        const {body} = await got.post('http://localhost:3000/sendData', {
-            json: {
-                hello : 'world'
-            },
-            responseType: 'json'
-        }); 
-        console.log(body.data); 
-    } catch (error) {
-        console.log(error.response.body); 
-    } 
-})();
-*/
