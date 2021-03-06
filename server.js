@@ -1,15 +1,18 @@
 //Required modules for setting up the server and handling requests
 const express = require("express"); 
+const bodyParser = require("body-parser"); 
 
 //Initialize
 const app = express(); 
-const port = 5000;
+const port = 3000;
+
+app.use(bodyParser.json()); 
 
 app.listen(port, () => {
-    console.log("Listening on port 5000"); 
+    console.log("Listening on port 3000"); 
 }); 
 
-app.use(express.static("PWA")); 
+app.use(express.static(__dirname + '/PWA')); 
 
 //Get routing
 app.get("/get", (req, resp) => {
@@ -19,7 +22,7 @@ app.get("/get", (req, resp) => {
 
 //Post routing 
 app.post("/sendData", (req, resp) => {
-    console.log(req); 
+    console.log(req.body); 
     resp.send("Code 200: POST Request Successful");  
 });
 
