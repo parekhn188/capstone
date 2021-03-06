@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="src/chords.css">
         <link rel="manifest" href="manifest.webmanifest">
         <script async type="text/javascript" src="https://www.scales-chords.com/api/scales-chords-api.js"></script>
-        <script src="server.js"></script>
+        <script src="/capstone/server.js"></script>
         <script>
             $(document).on('change', '.chordDropdown', function() {
                 var target = $(this).data('target');
@@ -29,8 +29,8 @@
                     <ul>
                         <li> <a href="index.html">Home</a></li>
                         <li> <a href="Chords.html">Chords</a></li>
-                        <li>  <a href="Test2.html">Play a Song</a></li>
-                        <li>  <a href="Test3.html">String UI</a></li>
+                        <li> <a href="Test2.html">Play a Song</a></li>
+                        <li> <a href="Test3.html">String UI</a></li>
                         <li> <a href="About.html">About Us</a></li>
                     </ul>
                  </nav>
@@ -60,39 +60,43 @@
             
         </div>  
 
-        <script>
-            function playSound() {
-               let buttonStuff = document.getElementsByName("test");  
-               buttonStuff[0].children[1].click(); 
+        <script>            
+            function getChords(index) {
+                let elems  = document.getElementsByTagName("Button"); 
+                var buttonList = new Array(elems.length); 
+                let counter = 0; 
+                for(let i = 0; i < elems.length; i++) {
+                    if(i%2 == 0) {
+                        buttonList[counter] = elems[i]; 
+                        counter++; 
+                    }
+                }
+                buttonList[index].click(); 
             }
         </script>
         
         <div class="chordOptions">
             <div id="Eminor" class="Eminor hide">
                 <ins class="scales_chords_api" chord="D#m(maj9)"></ins>
-                <ins class="scales_chords_api" chord="D#m(maj9)" instrument="guitar" output="sound" name="test"></ins>
-                <button id="testButton" onclick="playSound()">Test Button</button> 
+                <ins class="scales_chords_api" chord="D#m(maj9)" instrument="guitar" output="sound" name="emin"></ins>
+                <button id="testButton" onclick="getChords('0')">Test Button</button> 
             </div>
             <div id="E" class="E hide">
                 <ins class="scales_chords_api" chord="E"></ins>
-                <ins class="scales_chords_api" chord="E" instrument="guitar" output="sound"></ins>
-                <button id="testButton" onclick="playSound()">Test Button</button> 
+                <ins class="scales_chords_api" chord="E" instrument="guitar" output="sound" name="e"></ins>
+                <button id="testButton" onclick="getChords('1')">Test Button</button> 
             </div>
             <div id="D" class="D hide">
                 <ins class="scales_chords_api" chord="D"></ins>
-                <ins class="scales_chords_api" chord="D" instrument="guitar" output="sound"></ins>
-                <button id="testButton" onclick="playSound()">Test Button</button> 
+                <ins class="scales_chords_api" chord="D" instrument="guitar" output="sound" name="d"></ins>
+                <button id="testButton" onclick="getChords('2')">Test Button</button> 
             </div>
             <div id="F" class="F hide">
                 <ins class="scales_chords_api" chord="F"></ins>
-                <ins class="scales_chords_api" chord="F" instrument="guitar" output="sound"></ins>
-                <button id="testButton" onclick="playSound()">Test Button</button> 
+                <ins class="scales_chords_api" chord="F" instrument="guitar" output="sound" name="f"></ins>
+                <button id="testButton" onclick="getChords('3')">Test Button</button> 
             </div>
-        </div>
-
-
-        
-
+        </div>        
     </body>
  
     
