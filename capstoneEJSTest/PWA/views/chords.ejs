@@ -10,7 +10,7 @@
         <script async type="text/javascript" src="https://www.scales-chords.com/api/scales-chords-api.js"></script>
         <script>
             $(document).on('change', '.chordDropdown', function() {
-                var target = $(this).data('target');
+                var target = $(this).data('target'); 
                 var show = $("option:selected", this).data('show');
                 $(target).children().addClass('hide');
                 $(show).removeClass('hide');
@@ -58,43 +58,110 @@
             
         </div>  
 
+        <p id="status">Status, <%= status %></p>
+        <p id="chordSwitch">Switch, <%= chordSwitch %></p>
+        
+        <script>
+            setInterval(function() {
+                $("#status").load(window.location.href + " #status"); 
+            }, 100);
+            setInterval(function() {
+                $("#chordSwitch").load(window.location.href + " #chordSwitch"); 
+            }, 100);
+        </script>
+        
+        <script>
+            chordIndex = 0; 
+            function setIndex(index) {
+                chordIndex = index; 
+            } 
+        </script>
+
+
+        <script>
+            counter = 1; 
+            function changeChord() {
+                var chordList = ["Eminor","E", "D", "F"]; 
+                if(document.getElementById("chordSwitch").textContent == "Switch, 1") {
+                    if(counter > chordList.length-1) {
+                        counter = 0; 
+                    }
+                    $(".chordDropdown").val(chordList[counter]).change();
+                    counter++; 
+                }
+            }
+        </script>
+
         <script>            
             function getChords(index) {
                 let elems  = document.getElementsByTagName("Button"); 
+                
+                /*
                 var buttonList = new Array(elems.length); 
                 let counter = 0; 
                 for(let i = 0; i < elems.length; i++) {
-                    if(i%2 == 0) {
+                    if(i%2 == 1) {
                         buttonList[counter] = elems[i]; 
                         counter++; 
                     }
                 }
-                buttonList[index].click(); 
+                */
+
+                if(document.getElementById("status").textContent == "Status, Is Strumming"){
+                    //console.log(buttonList); 
+                    elems[index].click();
+                }
+
             }
         </script>
-        
+
         <div class="chordOptions">
             <div id="Eminor" class="Eminor hide">
                 <ins class="scales_chords_api" chord="D#m(maj9)"></ins>
                 <ins class="scales_chords_api" chord="D#m(maj9)" instrument="guitar" output="sound" name="emin"></ins>
-                <button id="testButton" onclick="getChords('0')">Test Button</button> 
             </div>
             <div id="E" class="E hide">
                 <ins class="scales_chords_api" chord="E"></ins>
                 <ins class="scales_chords_api" chord="E" instrument="guitar" output="sound" name="e"></ins>
-                <button id="testButton" onclick="getChords('1')">Test Button</button> 
             </div>
             <div id="D" class="D hide">
                 <ins class="scales_chords_api" chord="D"></ins>
                 <ins class="scales_chords_api" chord="D" instrument="guitar" output="sound" name="d"></ins>
-                <button id="testButton" onclick="getChords('2')">Test Button</button> 
             </div>
             <div id="F" class="F hide">
                 <ins class="scales_chords_api" chord="F"></ins>
                 <ins class="scales_chords_api" chord="F" instrument="guitar" output="sound" name="f"></ins>
-                <button id="testButton" onclick="getChords('3')">Test Button</button> 
             </div>
-        </div>        
+        </div>     
+        
+        <script>
+            selectedChord = ""; 
+            $(".chordDropdown").on('change', () => {
+                selectedChord = $(".chordDropdown").find('option:selected').attr('value');
+                if(selectedChord == "Eminor") {
+                    setIndex(0); 
+                } else if(selectedChord == "E") {
+                    setIndex(1); 
+                } else if (selectedChord == "D") {
+                    setIndex(2); 
+                } else if(selectedChord == "F") {
+                    setIndex(3); 
+                } else {
+                    setIndex(0); 
+                }
+            }); 
+        </script>
+
+        <script>
+            setInterval(function() {
+                getChords(chordIndex);  
+            }, 10);
+
+            setInterval(function() {
+                changeChord(); 
+            }, 400);
+        </script>
+    
     </body>
  
     

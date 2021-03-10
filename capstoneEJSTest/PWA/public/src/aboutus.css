@@ -1,0 +1,162 @@
+/* -----------------------------NAV BAR (UNVIERSAL) -----------------*/
+.topnav {
+
+   width: 90%;
+  
+}
+
+body{
+    margin: 0;
+    font-weight: 400;
+}
+header{
+   
+}
+
+
+.logo{
+    float: left; 
+    width: 15%;
+    height: auto;
+    padding: 20px;
+
+    
+}
+nav{
+    text-align: right; 
+    padding-top: 0px;
+   padding-bottom: 25px;
+   
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li{
+    display: inline-block;
+    margin-left: 70px;
+    padding-top: 50px;
+
+    position: relative;
+
+}
+
+nav a {
+    color: #01B39A;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+nav a:hover{
+    color: #000;
+
+}
+
+nav a::before{
+    content: '';
+    display: block;
+    height: 5px;
+    width: 0%;
+    background-color: #01B39A;
+
+    position: absolute;
+    top: 0;
+    width: 0%;
+
+    transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before{
+    width: 100%;
+}
+/* -----------------------------ABOUT US PAGE  -----------------*/
+body{
+	margin-top: 0px;
+}
+
+.team-section {
+
+   	
+    text-align: center;
+    background: #34495e;
+    padding-top: 50px;
+    padding-bottom: 25px;
+   
+
+}
+
+.team-section h1 {
+    text-transform: uppercase;
+    margin-bottom: 60px;
+    color: white;
+    font-size: 40px;
+    
+
+}
+
+.border{ 
+	display: block;
+	margin: auto;
+	width: 160px;
+	height: 3px;
+	background: #3498db;
+	margin-bottom:40px;
+
+ }
+.ps {
+ 
+    margin-bottom: 40px;
+}
+
+.ps a{
+	display: inline-block;
+	margin:0 30px;
+	width: 160px;
+	height: 160px;
+	overflow: hidden;
+	border-radius: 50%;
+}
+
+.ps a img{
+	width: 100%;
+	filter: grayscale(100%);
+	transition: 0.4s all;
+}
+
+.ps a:hover > img{
+	filter: none;
+}
+.ps a:target {
+    filter:grayscale(50%); 
+}
+
+
+.section{
+	overflow: visible;
+	width: 100%;
+	height: 300px;
+	margin: auto;
+	font-size: 20px;
+	color: white;
+	text-align: center;
+	height: 0;
+	overflow: hidden;
+	background:#34495e ;
+	
+}
+
+.section:target{
+	height: auto;
+}
+.name{
+	display: block;
+	margin-bottom: 30px;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 22px;
+
+}
