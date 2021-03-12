@@ -1,2 +1,2 @@
 # capstone
-Contains the arduino code for our capstone 
+Contains the C++ and front-end code for our capstone project
