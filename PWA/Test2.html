@@ -39,10 +39,10 @@
     </div> 
     
     <body>
-        <div class ="Chord" id="Chord">
+        <div class ="chord" id="chord">
             <h1> PLAY A SONG </h1>
             <span class="border"></span>
-            <div class = "Section" id = "Section">
+            <div class = "section" id = "section">
                 <p> Select a set of chords using the dropdown menu to obtain more information about that chord.
                     <br>
                     If you'd like to add more chords use the add chord button.
@@ -59,11 +59,12 @@
                     <option value="F" data-show=".F">F</option>
                 </select> 
             </div>
-        </div>  
 
+            <button id="addButton" onclick="addNewChord()"> Add a new chord</button>
+        </div>  
         <script>            
             function getChords(index) {
-                let elems  = document.getElementsByTagName("Button"); 
+                let elems  = document.getElementById("testButton");
                 var buttonList = new Array(elems.length); 
                 let counter = 0; 
                 for(let i = 0; i < elems.length; i++) {
@@ -73,6 +74,14 @@
                     }
                 }
                 buttonList[index].click(); 
+            }
+        </script>
+        <script>
+            function addNewChord() {
+                let element = document.createElement("div");
+                var chord = document.createTextNode("Taco");
+                element.appendChild(chord);
+                document.getElementById("chord").appendChild(element);
             }
         </script>
 

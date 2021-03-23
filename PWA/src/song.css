@@ -74,7 +74,7 @@ nav a:hover::before{
 }
 
 /* ----------------------------- CHORD SELECTION -----------------*/
-.Section{
+.section{
 	width: 100%;
 	height: 300px;
 	margin: auto;
@@ -86,7 +86,7 @@ nav a:hover::before{
     padding-bottom: 50px;
 }
 
-.Chord h1 {
+.chord h1 {
     text-transform: uppercase;
     margin-bottom: 60px;
     color: white;
@@ -94,7 +94,7 @@ nav a:hover::before{
 
 }
 
-.Chord{
+.chord{
     text-align: center;
     background: #34495e;
     padding-top: 50px;
@@ -112,7 +112,7 @@ nav a:hover::before{
 
  }
 
- .Chord input[type=text] {
+ .chord input[type=text] {
     float: Center;
     padding: 10px;
     border: none;
@@ -165,4 +165,18 @@ button#testButton{
     padding: 0px 0px; 
     height: 0px !important;
     width: 0px !important; 
+}
+
+/*--------------- ADD CHORD BUTTON---------*/
+button#addButton{
+    background-color: white;
+    border: none;
+    color: #2b3c4e;
+    padding: 15px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px
+
 }
