@@ -38,18 +38,22 @@
             </div>
             <span class="border"></span>
             
-            <div class = "dropdown" id = "dropdown">
-                <label for="chordDropdown">Choose a chord:</label>
-                <select name="chordDropdown" class="chordDropdown" data-target=".chordOptions">
-                    <option value="Eminor" data-show=".Eminor">E Minor</option>
-                    <option value="E" data-show=".E">E</option>
-                    <option value="D" data-show=".D">D</option>
-                    <option value="F" data-show=".F">F</option>
-                </select> 
+            <div id="dropdowns">
+                <div class="dropdown" id="dropdown">
+                    <label for="chordDropdown">Choose a chord:</label>
+                    <select name="chordDropdown" class="chordDropdown" data-target=".chordOptions">
+                        <option value="Eminor" data-show=".Eminor">E Minor</option>
+                        <option value="E" data-show=".E">E</option>
+                        <option value="D" data-show=".D">D</option>
+                        <option value="F" data-show=".F">F</option>
+                    </select> 
+                </div>
             </div>
 
             <button id="addButton" onclick="addNewChord()"> Add a new chord</button>
+
         </div>  
+        
         <script>            
             function getChords(index) {
                 let elems  = document.getElementsByClassName("testButton");
@@ -67,9 +71,11 @@
         <script>
             function addNewChord() {
                 let element = document.createElement("div");
-                var chord = document.createTextNode("Taco");
-                element.appendChild(chord);
-                document.getElementById("chord").appendChild(element);
+                var oldChord = document.getElementById("dropdown");
+                element.innerHTML = oldChord.innerHTML;
+                element.classList = oldChord.classList;
+                var newChord = document.getElementById("dropdowns");
+                newChord.appendChild(element);
             }
         </script>
 
