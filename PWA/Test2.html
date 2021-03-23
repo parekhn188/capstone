@@ -64,7 +64,7 @@
         </div>  
         <script>            
             function getChords(index) {
-                let elems  = document.getElementById("testButton");
+                let elems  = document.getElementsByClassName("testButton");
                 var buttonList = new Array(elems.length); 
                 let counter = 0; 
                 for(let i = 0; i < elems.length; i++) {
@@ -89,22 +89,22 @@
             <div id="Eminor" class="Eminor hide">
                 <ins class="scales_chords_api" chord="D#m(maj9)" instrument="guitar" output="sound" name="emin"></ins>
                 <br>
-                <button id="testButton" onclick="getChords('0')">Test Button</button> 
+                <button class="testButton" onclick="getChords('0')">Test Button</button> 
             </div>
             <div id="E" class="E hide">
                 <ins class="scales_chords_api" chord="E" instrument="guitar" output="sound" name="e"></ins>
                 <br>
-                <button id="testButton" onclick="getChords('1')">Test Button</button> 
+                <button class="testButton" onclick="getChords('1')">Test Button</button> 
             </div>
             <div id="D" class="D hide">
                 <ins class="scales_chords_api" chord="D" instrument="guitar" output="sound" name="d"></ins>
                 <br>
-                <button id="testButton" onclick="getChords('2')">Test Button</button> 
+                <button class="testButton" onclick="getChords('2')">Test Button</button> 
             </div>
             <div id="F" class="F hide">
                 <ins class="scales_chords_api" chord="F" instrument="guitar" output="sound" name="f"></ins>
                 <br>
-                <button id="testButton" onclick="getChords('3')">Test Button</button> 
+                <button class="testButton" onclick="getChords('3')">Test Button</button> 
             </div>
         </div>        
     </body>

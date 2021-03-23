@@ -149,7 +149,7 @@ nav a:hover::before{
     padding-bottom: 25px;
 }
 
-button#testButton{
+button.testButton{
     background-color: #34495e;
     border: none;
     color: white;
