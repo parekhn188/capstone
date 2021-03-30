@@ -104,3 +104,13 @@ html, body {
     margin-left: auto;
     margin-right: auto;
  }
+
+ .underConstruction p{
+    padding-top: 50px;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+
+ }
