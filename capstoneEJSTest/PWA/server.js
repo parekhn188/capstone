@@ -24,6 +24,22 @@ app.get("/", (req, resp) => {
     resp.render("index"); 
 });
 
+// app.get("/chords", (req, resp) => {
+//     resp.render("chords"); 
+// });
+
+app.get("/song", (req, resp) => {
+    resp.render("song"); 
+});
+
+// app.get("/stringUI", (req, resp) => {
+//     resp.render("stringUI"); 
+// });
+
+app.get("/about", (req, resp) => {
+    resp.render("about"); 
+});
+
 //Get routing
 app.get("/get", (req, resp) => {
     resp.send("Here's some data "); 
@@ -38,7 +54,6 @@ app.post("/sendData", (req, resp) => {
     //resp.render("chords", {status: strumStatus});
     app.get("/Chords", (req, resp) => {
         resp.render("chords", {status: strumStatus, chordSwitch:chordSwitch}); 
-        //response.redirect(request.get('referer'));
     });
     resp.send("Code 200: POST Request Successful");  
 });

@@ -26,11 +26,11 @@
                  <img src="images/logo.png" alt="logo" class="logo">
                 <nav>
                     <ul>
-                        <li> <a href="index.html">Home</a></li>
-                        <li> <a href="Chords.html">Chords</a></li>
-                        <li> <a href="Test2.html">Play a Song</a></li>
+                        <li> <a href="/">Home</a></li>
+                        <li> <a href="/chords">Chords</a></li>
+                        <li> <a href="/song">Play a Song</a></li>
                         <li> <a href="Test3.html">String UI</a></li>
-                        <li> <a href="About.html">About Us</a></li>
+                        <li> <a href="/about">About Us</a></li>
                     </ul>
                  </nav>
 
@@ -93,7 +93,7 @@
         </script>
 
         <script>            
-            function getChords(index) {
+            function getChords(index, flag) {
                 let elems  = document.getElementsByTagName("Button"); 
                 
                 /*
@@ -162,6 +162,21 @@
             }, 400);
         </script>
     
+        <div class = "Extra" id = "Extra">
+            <br>
+            <span class="border"></span>
+            <p> Hold the X button on the pick and strum in order to hear the sound of the chord </p>
+            <br>
+            <span class="border"></span>
+            <br>
+        </div>
+
+        <div class="footer">
+            <div class = "copyright">
+                <p> copyright</p>
+            </div>
+        </div>
+
     </body>
  
     
