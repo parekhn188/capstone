@@ -18,10 +18,8 @@ header{
 .logo{
     float: left; 
     width: 15%;
-    height: auto;
-    padding: 20px;
-
-    
+    height: auto; 
+    padding: 10px;   
 }
 nav{
     text-align: right; 
