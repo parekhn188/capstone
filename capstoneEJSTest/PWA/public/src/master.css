@@ -186,6 +186,11 @@ nav a:hover::before{
     padding: 5px 0px;
 }
 
+ul {
+    list-style-image: url("guitar.png")
+}
+
+
 /*-------- Footer --------*/
  
  .footer{
