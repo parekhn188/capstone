@@ -29,7 +29,7 @@
                         <li> <a href="/">Home</a></li>
                         <li> <a href="/chords">Chords</a></li>
                         <li> <a href="/song">Play a Song</a></li>
-                        <li> <a href="Test3.html">String UI</a></li>
+                        <li> <a href="/stringInterface">String UI</a></li>
                         <li> <a href="/about">About Us</a></li>
                     </ul>
                  </nav>
@@ -38,10 +38,10 @@
     </header>
 
     <body>
-        <div class ="Chord" id="Chord">
+        <div class ="chord" id="chord">
             <h1> Chords </h1>
             <span class="border"></span>
-            <div class = "Section" if = "Section">
+            <div class = "section" if = "section">
                 <p> Select a chord using the dropdown menu to obtain more information about that chord.</p>
             </div>
             <span class="border"></span>
@@ -58,8 +58,8 @@
             
         </div>  
 
-        <p id="status">Status, <%= status %></p>
-        <p id="chordSwitch">Switch, <%= chordSwitch %></p>
+        <p id="status" style="text-align: center;">Status, <%= status %></p>
+        <p id="chordSwitch" style="text-align: center;" >Switch, <%= chordSwitch %></p>
         
         <script>
             setInterval(function() {
@@ -117,19 +117,19 @@
 
         <div class="chordOptions">
             <div id="Eminor" class="Eminor hide">
-                <ins class="scales_chords_api" chord="D#m(maj9)"></ins>
+                <ins class="scales_chords_api" chord="D#m(maj9)" width="450px"></ins>
                 <ins class="scales_chords_api" chord="D#m(maj9)" instrument="guitar" output="sound" name="emin"></ins>
             </div>
             <div id="E" class="E hide">
-                <ins class="scales_chords_api" chord="E"></ins>
+                <ins class="scales_chords_api" chord="E" width="450px"></ins>
                 <ins class="scales_chords_api" chord="E" instrument="guitar" output="sound" name="e"></ins>
             </div>
             <div id="D" class="D hide">
-                <ins class="scales_chords_api" chord="D"></ins>
+                <ins class="scales_chords_api" chord="D" width="450px"></ins>
                 <ins class="scales_chords_api" chord="D" instrument="guitar" output="sound" name="d"></ins>
             </div>
             <div id="F" class="F hide">
-                <ins class="scales_chords_api" chord="F"></ins>
+                <ins class="scales_chords_api" chord="F" width="450px"></ins>
                 <ins class="scales_chords_api" chord="F" instrument="guitar" output="sound" name="f"></ins>
             </div>
         </div>     
@@ -161,13 +161,21 @@
                 changeChord(); 
             }, 400);
         </script>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
     
         <div class = "Extra" id = "Extra">
             <br>
-            <span class="border"></span>
-            <p> Hold the X button on the pick and strum in order to hear the sound of the chord </p>
-            <br>
-            <span class="border"></span>
+            <p> Hold the  
+                <span style="color: red;">RED</span>
+            button on the pick and strum in order to hear the sound of the chord </p> 
+        
+            <p> Hold the WHITE button on the pick to change the chord being played</p> 
             <br>
         </div>
 

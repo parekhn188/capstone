@@ -17,7 +17,7 @@ app.listen(port, () => {
     console.log("Listening on port 3000"); 
 }); 
 
-app.use(express.static(__dirname + '/public')); 
+app.use(express.static(__dirname + '/views')); 
 
 //Routes
 app.get("/", (req, resp) => {
@@ -32,9 +32,9 @@ app.get("/song", (req, resp) => {
     resp.render("song"); 
 });
 
-// app.get("/stringUI", (req, resp) => {
-//     resp.render("stringUI"); 
-// });
+app.get("/stringInterface", (req, resp) => {
+    resp.render("stringInterface"); 
+});
 
 app.get("/about", (req, resp) => {
     resp.render("about"); 
