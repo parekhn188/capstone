@@ -17,7 +17,7 @@ header{
     float: left; 
     width: 15%;
     height: auto;
-    padding: 20px;
+    padding: 10px;
 
     
 }
@@ -71,4 +71,36 @@ nav a::before{
 
 nav a:hover::before{
     width: 100%;
+}
+
+
+.hero  {
+   
+   top: 50%;
+   left: 50%;
+   position: absolute;
+   transform: translate(-50%,-50%);
+   text-align: center;
+}
+
+h1{
+    font-size: 60px;
+    letter-spacing: 15px;
+    font-family: dosis;
+    color: #01B39A;
+}
+
+hr{
+    width: 50%;
+    margin: 30px auto;
+    border: 1.5px solid;
+    color: #01B39A;
+  
+}
+
+p{
+    font-size: 20px;
+    margin-bottom: 30px; 
+     font-family: dosis;
+     color: #01B39A;
 }

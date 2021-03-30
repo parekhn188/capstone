@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Swish Guitar</title>
+        <link rel="stylesheet" href="src/chords.css">
+        <link rel="manifest" href="manifest.webmanifest">
+        <script async type="text/javascript" src="https://www.scales-chords.com/api/scales-chords-api.js"></script>
+        <script>
+            $(document).on('change', '.chordDropdown', function() {
+                var target = $(this).data('target');
+                var show = $("option:selected", this).data('show');
+                $(target).children().addClass('hide');
+                $(show).removeClass('hide');
+            });
+            $(document).ready(function(){
+                $('.chordDropdown').trigger('change');
+            });
+        </script>
+    </head>
+    <header>
+            <script src="src/index.js"></script>
+            <div class="topnav" id="myTopNav">
+                 <img src="images/logo.png" alt="logo" class="logo">
+                <nav>
+                    <ul>
+                        <li> <a href="index.html">Home</a></li>
+                        <li> <a href="Chords.html">Chords</a></li>
+                        <li> <a href="Test2.html">Play a Song</a></li>
+                        <li> <a href="Test3.html">String UI</a></li>
+                        <li> <a href="About.html">About Us</a></li>
+                    </ul>
+                 </nav>
+
+             </div> 
+    </header>
+
+    <body>
+        <div class ="Chord" id="Chord">
+            <h1> Chords </h1>
+            <span class="border"></span>
+            <div class = "Section" id = "Section">
+                <p> Select a chord using the dropdown menu to obtain more information about that chord.</p>
+            </div>
+            <span class="border"></span>
+            
+            <div class = "dropdown" id = "dropdown">
+                <label for="chordDropdown">Choose a chord:</label>
+                <select name="chordDropdown" class="chordDropdown" data-target=".chordOptions">
+                    <option value="Eminor" data-show=".Eminor">E Minor</option>
+                    <option value="E" data-show=".E">E</option>
+                    <option value="D" data-show=".D">D</option>
+                    <option value="F" data-show=".F">F</option>
+                </select> 
+            </div>
+            
+        </div>  
+
+        <script>            
+            function getChords(index) {
+                let elems  = document.getElementsByTagName("Button"); 
+                var buttonList = new Array(elems.length); 
+                let counter = 0; 
+                for(let i = 0; i < elems.length; i++) {
+                    if(i%2 == 0) {
+                        buttonList[counter] = elems[i]; 
+                        counter++; 
+                    }
+                }
+                buttonList[index].click(); 
+            }
+        </script>
+        
+        <div class="chordOptions">
+            <div id="Eminor" class="Eminor hide">
+                <ins class="scales_chords_api" chord="D#m(maj9)"></ins>
+                <ins class="scales_chords_api" chord="D#m(maj9)" instrument="guitar" output="sound" name="emin"></ins>
+                <br>
+                <button id="testButton" onclick="getChords('0')">Test Button</button> 
+            </div>
+            <div id="E" class="E hide">
+                <ins class="scales_chords_api" chord="E"></ins>
+                <ins class="scales_chords_api" chord="E" instrument="guitar" output="sound" name="e"></ins>
+                <br>
+                <button id="testButton" onclick="getChords('1')">Test Button</button> 
+            </div>
+            <div id="D" class="D hide">
+                <ins class="scales_chords_api" chord="D"></ins>
+                <ins class="scales_chords_api" chord="D" instrument="guitar" output="sound" name="d"></ins>
+                <br>
+                <button id="testButton" onclick="getChords('2')">Test Button</button> 
+            </div>
+            <div id="F" class="F hide">
+                <ins class="scales_chords_api" chord="F"></ins>
+                <ins class="scales_chords_api" chord="F" instrument="guitar" output="sound" name="f"></ins>
+                <br>
+                <button id="testButton" onclick="getChords('3')">Test Button</button> 
+            </div>
+        </div>        
+    </body>
+    
+    <div class = "Extra" id = "Extra">
+        <br>
+        <span class="border"></span>
+        <p> Hold the X button on the pick and strum in order to hear the sound of the chord </p>
+        <br>
+        <span class="border"></span>
+        <br>
+    </div>
+    
+    <div class="footer">
+        <div class = "copyright">
+            <p> copyright</p>
+        </div>
+    </div>
+
+</html>
