@@ -72,3 +72,35 @@ nav a::before{
 nav a:hover::before{
     width: 100%;
 }
+
+
+/* -------------------- Body --------------- */
+
+html, body {
+    margin:0;
+    padding:0;
+    height:100%; 
+ }
+
+ .underConstruction{
+    height: 100%;
+    background-color:#34495e;
+  }
+
+ .underConstruction h1{
+    padding-top: 50px;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+    color: white;
+    font-size: 60px;
+    text-align: center;
+ }
+
+ .construction{
+    text-align: center;
+    width: auto;
+    height: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+ }
