@@ -87,13 +87,17 @@ html, body {
     background-color:#34495e;
   }
 
- .underConstruction h1{
-    padding-top: 50px;
+ .underConstruction span{
+    /* padding-top: 50px; */
     text-transform: uppercase;
-    margin-bottom: 60px;
+    padding-bottom: 60px;
+    padding-top: 60px;
     color: white;
-    font-size: 32px;
+    font-size: 46px;
     text-align: center;
+    display: block;
+    background-color:#34495e;
+
  }
 
  .construction{
