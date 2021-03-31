@@ -24,10 +24,32 @@
 
      </div> 
     <body>
-         <div class = "underConstruction"> 
-             <span>Under Construction </span>
-             <img src="images/construction.webp" class = "construction">
-             <p> Projected Date: TBD</p>
-         </div>
+      
+<div class="hero">
+    <p> Building Awesome Feature</p>
+    <H1>Coming Soon</H1>
+
+    <p id="timer"></p>
+
+    <script>
+        var countDownDate = new Date("April 4, 2022 15:37:25").getTime(); 
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now; 
+
+            var days = Math.floor(distance/(1000*60*60*24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("timer").innerHTML = days + " Days, " + hours + " Hours, " + minutes + " Minutes, " + seconds + " Seconds "
+ 
+        }, 1000)
+
+
+    </script>
+     <hr>
+    
     </body>
+
 </html>
