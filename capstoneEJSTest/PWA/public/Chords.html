@@ -53,6 +53,12 @@
                     <option value="E" data-show=".E">E</option>
                     <option value="D" data-show=".D">D</option>
                     <option value="F" data-show=".F">F</option>
+                    <option value="GMajor" data-show=".GMajor">G Major</option>
+                    <option value="C" data-show=".C">C</option>
+                    <option value="AMinor" data-show=".AMinor">A Minor</option>
+                    <option value="A" data-show=".A">A</option>
+                    <option value="BMinor" data-show=".BMinor">B Minor</option>
+                    <option value="DMinor" data-show=".DMinor">D Minor</option>
                 </select> 
             </div>
             
@@ -75,8 +81,8 @@
         
         <div class="chordOptions">
             <div id="Eminor" class="Eminor hide">
-                <ins class="scales_chords_api" chord="D#m(maj9)"></ins>
-                <ins class="scales_chords_api" chord="D#m(maj9)" instrument="guitar" output="sound" name="emin"></ins>
+                <ins class="scales_chords_api" chord="Em"></ins>
+                <ins class="scales_chords_api" chord="Em" instrument="guitar" output="sound" name="emin"></ins>
                 <br>
                 <button id="testButton" onclick="getChords('0')">Test Button</button> 
             </div>
@@ -97,6 +103,30 @@
                 <ins class="scales_chords_api" chord="F" instrument="guitar" output="sound" name="f"></ins>
                 <br>
                 <button id="testButton" onclick="getChords('3')">Test Button</button> 
+            </div>
+            <div id="GMajor" class="GMajor hide">
+                <ins class="scales_chords_api" chord="Gmaj7"></ins>
+                <ins class="scales_chords_api" chord="Gmaj7" instrument="guitar" output="sound" name="Gmajor"></ins>
+            </div>
+            <div id="C" class="C hide">
+                <ins class="scales_chords_api" chord="C"></ins>
+                <ins class="scales_chords_api" chord="C" instrument="guitar" output="sound" name="Gmajor"></ins>
+            </div>
+            <div id="AMinor" class="AMinor hide">
+                <ins class="scales_chords_api" chord="Am"></ins>
+                <ins class="scales_chords_api" chord="Am" instrument="guitar" output="sound" name="Gmajor"></ins>
+            </div>
+            <div id="A" class="A hide">
+                <ins class="scales_chords_api" chord="A"></ins>
+                <ins class="scales_chords_api" chord="A" instrument="guitar" output="sound" name="Gmajor"></ins>
+            </div>
+            <div id="BMinor" class="BMinor hide">
+                <ins class="scales_chords_api" chord="Bm"></ins>
+                <ins class="scales_chords_api" chord="Bm" instrument="guitar" output="sound" name="Gmajor"></ins>
+            </div>
+            <div id="DMinor" class="DMinor hide">
+                <ins class="scales_chords_api" chord="Dm"></ins>
+                <ins class="scales_chords_api" chord="Dm" instrument="guitar" output="sound" name="Gmajor"></ins>
             </div>
         </div>        
     </body>
