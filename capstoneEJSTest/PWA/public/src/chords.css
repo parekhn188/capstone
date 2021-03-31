@@ -182,16 +182,6 @@
      flex: 1;
  }
  
- .border{ 
-    display: block;
-    margin: auto;
-    width: 160px;
-    height: 3px;
-    background: #3498db;
-    margin-bottom:30px;
-    margin-top: 30px;
-  }
- 
  /*------------ FOOTER --------------*/
  
  .footer{
@@ -202,5 +192,31 @@
     font-size: 20px;
     height: auto;
     position: absolute;
-    bottom: 0;
+}
+
+.copyright{
+    text-align: left;
+    font-size: 16px;
+    color:white;
+}
+
+.names{
+    text-align: right;
+    right: 0;
+    font-size: 16px;
+    color: white;
+    margin-left: auto;
+}
+
+.float-child {
+    width: 50%;
+    float: left;
+    height: 100px;
+}  
+
+.float-child div{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0px 30px;
 }
