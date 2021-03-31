@@ -202,3 +202,30 @@ ul {
     height: auto;
     position: absolute;
 }
+
+.copyright{
+    text-align: left;
+    font-size: 16px;
+    color:white;
+}
+
+.names{
+    text-align: right;
+    right: 0;
+    font-size: 16px;
+    color: white;
+    margin-left: auto;
+}
+
+.float-child {
+    width: 50%;
+    float: left;
+    height: 100px;
+}  
+
+.float-child div{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0px 30px;
+}
