@@ -82,39 +82,31 @@ html, body {
     height:100%; 
  }
 
- .underConstruction{
-    height: 100%;
-    background-color:#34495e;
-  }
+.hero  {
+   
+   top: 50%;
+   left: 50%;
+   position: absolute;
+   transform: translate(-50%,-50%);
+   text-align: center;
+}
 
- .underConstruction span{
-    /* padding-top: 50px; */
-    text-transform: uppercase;
-    padding-bottom: 60px;
-    padding-top: 60px;
-    color: white;
-    font-size: 46px;
-    text-align: center;
-    display: block;
-    background-color:#34495e;
+h1{
+    font-size: 60px;
+    letter-spacing: 15px;
+    font-family: dosis;
+    color: #01B39A;
+}
 
- }
-
- .construction{
-    text-align: center;
-    width: auto;
-    height: 50%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
- }
-
- .underConstruction p{
-    padding-top: 50px;
-    text-transform: uppercase;
-    margin-bottom: 60px;
-    color: white;
-    font-size: 30px;
-    text-align: center;
-
+hr{
+    width: 50%;
+    margin: 30px auto;
+    border: 1.5px solid;
+    color: #01B39A;
+}
+p{
+    font-size: 20px;
+    margin-bottom: 30px; 
+     font-family: dosis;
+     color: #01B39A;
  }
