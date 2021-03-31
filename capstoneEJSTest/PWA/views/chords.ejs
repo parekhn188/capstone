@@ -53,6 +53,12 @@
                     <option value="E" data-show=".E">E</option>
                     <option value="D" data-show=".D">D</option>
                     <option value="F" data-show=".F">F</option>
+                    <option value="GMajor" data-show=".GMajor">G Major</option>
+                    <option value="C" data-show=".C">C</option>
+                    <option value="AMinor" data-show=".AMinor">A Minor</option>
+                    <option value="A" data-show=".A">A</option>
+                    <option value="BMinor" data-show=".BMinor">B Minor</option>
+                    <option value="DMinor" data-show=".DMinor">D Minor</option>
                 </select> 
             </div>
             
@@ -81,7 +87,8 @@
         <script>
             counter = 1; 
             function changeChord() {
-                var chordList = ["Eminor","E", "D", "F"]; 
+                var chordList = ["Eminor","E", "D", "F", "GMajor", 
+                                "C", "AMinor", "A", "BMinor", "DMinor"]; 
                 if(document.getElementById("chordSwitch").textContent == "Switch, 1") {
                     if(counter > chordList.length-1) {
                         counter = 0; 
@@ -93,7 +100,7 @@
         </script>
 
         <script>            
-            function getChords(index, flag) {
+            function getChords(index) {
                 let elems  = document.getElementsByTagName("Button"); 
                 
                 /*
@@ -106,7 +113,6 @@
                     }
                 }
                 */
-
                 if(document.getElementById("status").textContent == "Status, Is Strumming"){
                     //console.log(buttonList); 
                     elems[index].click();
@@ -132,12 +138,37 @@
                 <ins class="scales_chords_api" chord="F" width="450px"></ins>
                 <ins class="scales_chords_api" chord="F" instrument="guitar" output="sound" name="f"></ins>
             </div>
+            <div id="GMajor" class="GMajor hide">
+                <ins class="scales_chords_api" chord="Gmaj7" width="450px"></ins>
+                <ins class="scales_chords_api" chord="Gmaj7" instrument="guitar" output="sound" name="Gmajor"></ins>
+            </div>
+            <div id="C" class="C hide">
+                <ins class="scales_chords_api" chord="C" width="450px"></ins>
+                <ins class="scales_chords_api" chord="C" instrument="guitar" output="sound" name="c"></ins>
+            </div>
+            <div id="AMinor" class="AMinor hide">
+                <ins class="scales_chords_api" chord="Am" width="450px"></ins>
+                <ins class="scales_chords_api" chord="Am" instrument="guitar" output="sound" name="Am"></ins>
+            </div>
+            <div id="A" class="A hide">
+                <ins class="scales_chords_api" chord="A" width="450px"></ins>
+                <ins class="scales_chords_api" chord="A" instrument="guitar" output="sound" name="A"></ins>
+            </div>
+            <div id="BMinor" class="BMinor hide">
+                <ins class="scales_chords_api" chord="Bm" width="450px"></ins>
+                <ins class="scales_chords_api" chord="Bm" instrument="guitar" output="sound" name="Bm"></ins>
+            </div>
+            <div id="DMinor" class="DMinor hide">
+                <ins class="scales_chords_api" chord="Dm" width="450px"></ins>
+                <ins class="scales_chords_api" chord="Dm" instrument="guitar" output="sound" name="Dm"></ins>
+            </div>
         </div>     
         
         <script>
             selectedChord = ""; 
             $(".chordDropdown").on('change', () => {
                 selectedChord = $(".chordDropdown").find('option:selected').attr('value');
+                console.log(selectedChord);
                 if(selectedChord == "Eminor") {
                     setIndex(0); 
                 } else if(selectedChord == "E") {
@@ -146,6 +177,18 @@
                     setIndex(2); 
                 } else if(selectedChord == "F") {
                     setIndex(3); 
+                } else if(selectedChord == "GMajor") {
+                    setIndex(4); 
+                } else if(selectedChord == "C") {
+                    setIndex(5); 
+                } else if(selectedChord == "AMinor") {
+                    setIndex(6); 
+                } else if(selectedChord == "A") {
+                    setIndex(7); 
+                } else if(selectedChord == "BMinor") {
+                    setIndex(8); 
+                } else if(selectedChord == "DMinor") {
+                    setIndex(9); 
                 } else {
                     setIndex(0); 
                 }
