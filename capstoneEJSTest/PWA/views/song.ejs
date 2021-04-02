@@ -10,7 +10,10 @@
         <script async type="text/javascript" src="https://www.scales-chords.com/api/scales-chords-api.js"></script>
     </head>
     <header>
-      
+        <script>
+            var chordsList = new Array(10); 
+            var indexList = new Array(10);
+        </script>
         <script src="src/index.js"></script>
     </header>
    <div class="topnav" id="myTopNav">
@@ -49,58 +52,130 @@
                     </select> 
                 </div>
             </div>
-
             <button id="addButton" onclick="addNewChord()"> Add a new chord</button>
 
         </div>  
+
+        <p id="status" style="text-align: center;">Status, <%= status %></p>
+        <p id="chordSwitch" style="text-align: center;" >Switch, <%= chordSwitch %></p>
         
-        <script>            
-            function getChords(index) {
-                let elems  = document.getElementsByClassName("testButton");
-                var buttonList = new Array(elems.length); 
-                let counter = 0; 
-                for(let i = 0; i < elems.length; i++) {
-                    if(i%2 == 0) {
-                        buttonList[counter] = elems[i]; 
-                        counter++; 
-                    }
-                }
-                buttonList[index].click(); 
-            }
+        <script>
+            setInterval(function() {
+                $("#status").load(window.location.href + " #status"); 
+            }, 50);
+            setInterval(function() {
+                $("#chordSwitch").load(window.location.href + " #chordSwitch"); 
+            }, 100);
         </script>
+
+
         <script>
             function addNewChord() {
-                let element = document.createElement("div");
                 var oldChord = document.getElementById("dropdown");
+                dropdownList = document.getElementsByClassName('chordDropdown');
+               
+                for(let i = 0; i < dropdownList.length; i++) {
+                    chordsList[i] = ($(dropdownList[i]).find('option:selected').attr('value'))
+                }
+
+                console.log(chordsList);
+
+                let tmp = getChords(); 
+
+                for(let i = 0; i  < chordsList.length; i++) {
+                    if(chordsList[i] == "Eminor") {
+                        indexList[i] = 0; 
+                    } else if(chordsList[i] == "E") {
+                        indexList[i] = 1; 
+                    } else if (chordsList[i] == "D") {
+                        indexList[i] = 2; 
+                    } else if(chordsList[i] == "F") {
+                        indexList[i] = 3; 
+                    } 
+                }
+
+                console.log(indexList);
+
+                $(".chordDropdown").on('change', () => {
+                    let selectedChord = $(oldChord).find('option:selected').attr('value');
+                    console.log(selectedChord)
+                    chordsList[i++] = selectedChord;
+                }) 
+                
+                let element = document.createElement("div");
                 element.innerHTML = oldChord.innerHTML;
                 element.classList = oldChord.classList;
                 var newChord = document.getElementById("dropdowns");
                 newChord.appendChild(element);
             }
-        </script>
+        </script> 
 
         <div class="chordOptions">
             <div id="Eminor" class="Eminor hide">
                 <ins class="scales_chords_api" chord="D#m(maj9)" instrument="guitar" output="sound" name="emin"></ins>
                 <br>
-                <button class="testButton" onclick="getChords('0')">Test Button</button> 
             </div>
             <div id="E" class="E hide">
                 <ins class="scales_chords_api" chord="E" instrument="guitar" output="sound" name="e"></ins>
                 <br>
-                <button class="testButton" onclick="getChords('1')">Test Button</button> 
             </div>
             <div id="D" class="D hide">
                 <ins class="scales_chords_api" chord="D" instrument="guitar" output="sound" name="d"></ins>
                 <br>
-                <button class="testButton" onclick="getChords('2')">Test Button</button> 
             </div>
             <div id="F" class="F hide">
                 <ins class="scales_chords_api" chord="F" instrument="guitar" output="sound" name="f"></ins>
                 <br>
-                <button class="testButton" onclick="getChords('3')">Test Button</button> 
             </div>
-        </div>        
+        </div>      
+        
+        <script>            
+            function getChords() {
+                let elems  = document.getElementsByTagName("Button"); 
+                //console.log(elems)
+                let buttonList = new Array(elems.length);
+
+                let counter = 0; 
+                for(let i = 1; i < elems.length; i++) {
+                    buttonList[counter] = elems[i]; 
+                    counter++;
+                }
+    
+                return buttonList;
+            }
+        </script>
+
+        <script>        
+            let counter = 0;  
+            let chordIndex = 0;
+            function playChords() {
+                let list = getChords();
+                chordIndex = indexList[counter]; 
+                
+                if(document.getElementById("chordSwitch").textContent == "Switch, 1") {
+                    if(counter > 3) {
+                        counter = 0; 
+                    } else {
+                        counter++; 
+                    }
+                    chordIndex = indexList[counter];
+                }
+
+                if(document.getElementById("status").textContent == "Status, Is Strumming"){
+                    list[chordIndex].click();
+                }
+
+            }
+        </script>
+
+        <script>
+            setInterval(function() {
+                playChords();  
+            }, 200);
+
+        </script>
+        
+
     </body>    
 
 </html>

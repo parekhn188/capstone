@@ -28,9 +28,9 @@ app.get("/", (req, resp) => {
 //     resp.render("chords"); 
 // });
 
-app.get("/song", (req, resp) => {
-    resp.render("song"); 
-});
+// app.get("/song", (req, resp) => {
+//     resp.render("song"); 
+// });
 
 app.get("/stringInterface", (req, resp) => {
     resp.render("stringInterface"); 
@@ -55,6 +55,11 @@ app.post("/sendData", (req, resp) => {
     app.get("/Chords", (req, resp) => {
         resp.render("chords", {status: strumStatus, chordSwitch:chordSwitch}); 
     });
+
+    app.get("/song", (req, resp) => {
+        resp.render("song", {status: strumStatus, chordSwitch:chordSwitch}); 
+    });
+
     resp.send("Code 200: POST Request Successful");  
 });
 
